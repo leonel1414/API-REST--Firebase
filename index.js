@@ -54,6 +54,14 @@ app.get("/", (req,res) =>{
 });
 
 app.get("/products", (req, res) =>{
+    const { category } = req.query;
+
+    if(category){
+        const productsFiltered = products.filter((item) => item.categorias.includes(category)); 
+
+        return res.json(productsFiltered);
+    }
+
     res.json(products);
 });
 
@@ -66,7 +74,7 @@ app.get("/products/:id", (req, res) =>{
         res.status(404).json({error: "No existe el producto"});
     }
 
-    res.json(req.params);
+    res.json(product);
 });
 
 const PORT = 3000;
