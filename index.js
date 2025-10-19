@@ -7,16 +7,8 @@ const app = express();
 // Middleware para parsear JSON
 app.use(express.json());
 
-/*
-app.use((req, res, next) =>{
-    //res.json({ message: "Hola API en mantenemiento"});
-    console.log(req.method);
-    next();
-});
-*/
 
 app.use('/api',productsRouter);
-
 
 const PORT = 3000;
 
