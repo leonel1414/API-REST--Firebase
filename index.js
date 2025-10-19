@@ -15,7 +15,7 @@ app.use((req, res, next) =>{
 });
 */
 
-app.use(productsRouter);
+app.use('/api',productsRouter);
 
 
 const PORT = 3000;
