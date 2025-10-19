@@ -65,6 +65,14 @@ app.get("/products", (req, res) =>{
     res.json(products);
 });
 
+//buscador
+
+app.get("/products/search",(req, res) =>{
+    const { name } = req.query;
+
+
+});
+
 app.get("/products/:id", (req, res) =>{
     const id = parseInt(req.params.id);
 
@@ -79,7 +87,7 @@ app.get("/products/:id", (req, res) =>{
 
 const PORT = 3000;
 
-// El middleware notFound debe ir AL FINAL de todas las rutas
+// El middleware notFound debe ir AL FINAL de todas las rutas 13:04
 app.use(notFound);
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
