@@ -45,7 +45,7 @@ export const searchProducts = (req, res) =>{
 export const getProductById = (req, res) =>{
     const id = parseInt(req.params.id);
 
-    const product = products.find((item) => item.id == id);
+    const product = Model.getProductById(id);
 
     if(!product){
         res.status(404).json({error: "No existe el producto"});
